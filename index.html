@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="en">
+<!-- 
+	Presetation for Strasbourg Web Meeteup event
+
+	Note: Please don't judge my code, I have no time to make it better :p
+-->
 
 	<head>
 		<meta charset="utf-8">
 
-		<title>Node.js - Fast and scalable javascript platform</title>
+		<title>Node.js - another javascript platform</title>
 
 		<meta name="description" content="A very simple presentation of Node.js for Strasbourg-Web meetup">
 		<meta name="author" content="Chin Ho CHEUNG">
@@ -32,11 +37,9 @@
 		        	<h1>Node.js</h1> 
 		        	<h4>Quick peek on another javascript platform</h4>
 						<p>
-							<br> 
-							<br>
 							<small>
-								Created by Chin Ho CHEUNG<br>
-								Inspired <strong>(Strongly)</strong> by Olivier Scherrer's <a href= "https://github.com/podefr/presentation-nodejs">Node.js architecture presentation</a>
+								By Chin Ho CHEUNG<br>
+								Inspired <strong>(Strongly)</strong> by Olivier Scherrer's <a href= "https://github.com/podefr/presentation-nodejs">Node.js architecture presentation</a><br>
 							</small>
 						</p>					
 				</section>
@@ -49,13 +52,15 @@
 								<li class="fragment">Event-Driven programing</li>
 								<li class="fragment">Non-blocking I/O</li>
 								<li class="fragment">Asynchronous programming</li>
-							</ul><br><br>
+							</ul><br><br>	
 							<div class="fragment" >... and also, it's supposed to be fast because it's based on <a href="http://code.google.com/p/v8/">Google's V8</a></div>
 						</p>
 				</section>
 				<!-- NEW SLIDE -->
 				<section>
+					<br>
 					<h2>Google's V8 ?</h2>
+					<br>
 						<p>
 						<ul>
 							<li class="fragment" >It's a Javascript engine</li>
@@ -74,11 +79,15 @@
 				<section>
 					<!-- NEW SLIDE -->
 					<section>
-						<h2> So what can NodeJS give me ?</h2>
+						<h2 > So what can NodeJS give me ?</h2>
+						<p class="fragment">
+							A lot of things actually ...
+						</p>
 					</section>
 					<!-- NEW SLIDE -->
 					<section>
 						<h2>A buttload of native modules</h2>
+						<div class="fragment roll-in">
 							<div style="float: left; width: 33%;">
 								<ul>
 									<li>Child Processes</li>
@@ -121,21 +130,51 @@
 									<li>ZLIB</li>
 								</ul>
 							</div>
+						</div>
+					</section>
+					<!-- NEW SLIDE -->
+					<section>
+						<h2>Example of use</h2>
+						<pre><code contenteditable>
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+					</code></pre>
+					<small>
+						Stolen from <a href="http://nodejs.org">NodeJS homepage</a>
+					</small>
+					</section>
+					<!-- NEW SLIDE -->
+					<section>
+						<h2>Also ...</h2>
+						<br>
+						<p>
+							<ul>
+								<li class="fragment">An easy access to the NodeJS community's work (<a href="https://npmjs.org/">NpmJS.org</a>)</li>
+								<li class="fragment">Interface with C++ code</li>
+							</ul>
+						</p>
 					</section>
 				</section>
 				<!-- NEW SLIDE -->
 				<section>
-					<h1>THE END</h1>
+					<h2>Some links</h2>
 					<br>
-					<br>
-					<small>
+					<p>
 					<ul>
 						<li><a href="http://nodejs.org/">Nodejs.org</a><br>
 						<li><a href="http://code.google.com/p/v8/">V8</a><br>
-						<li><a href="https://github.com/chinhoc">"chinhoc" on Github</a><br>
-						<li><a href="https://github.com/podefr">"podefr" on Github</a><br>
+						<li><a href="https://github.com/chinhoc">chinhoc on Github</a><br>
+						<li><a href="https://github.com/podefr">podefr on Github</a><br>
 					</ul>
-					</small>
+				</p>
+				</section>
+				<!-- NEW SLIDE -->
+				<section>
+					<h1>THE END</h1>
 				</section>
 		    </div>
 		</div>
@@ -153,7 +192,7 @@
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/none
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
